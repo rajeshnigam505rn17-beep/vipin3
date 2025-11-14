@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViserTube - Online Video Sharing Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-red': '#ff0000',
+              'dark-1': '#0f0f0f',
+              'dark-2': '#222222',
+              'dark-3': '#3f3f3f',
+              'gray-text': '#aaaaaa',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>">
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1"
+  }
+}
+</script>
+<style>
+    /* Custom scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 8px; /* Height of horizontal scrollbar */
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #222222; /* Corresponds to dark-2 */
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #3f3f3f; /* Corresponds to dark-3 */
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #555555;
+    }
+
+    /* Custom scrollbar for Firefox */
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #3f3f3f #222222; /* thumb color, track color */
+    }
+
+    /* Custom styling for video player range inputs */
+    .video-range {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        width: 100%;
+    }
+    /* Webkit (Chrome, Safari) */
+    .video-range::-webkit-slider-runnable-track {
+        background-color: rgba(255, 255, 255, 0.3);
+        height: 4px;
+        border-radius: 2px;
+    }
+    .video-range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        margin-top: -6px; /* center thumb on track */
+        background-color: #ff0000;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+    }
+    /* Firefox */
+    .video-range::-moz-range-track {
+        background-color: rgba(255, 255, 255, 0.3);
+        height: 4px;
+        border-radius: 2px;
+    }
+    .video-range::-moz-range-thumb {
+        background-color: #ff0000;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        border: none;
+    }
+</style>
+</head>
+<body class="bg-dark-1 text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
